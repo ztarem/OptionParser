@@ -1,0 +1,6 @@
+#ifndef OPTIONPARSER_LIBRARY_H
+#define OPTIONPARSER_LIBRARY_H
+
+void hello();
+
+#endif//OPTIONPARSER_LIBRARY_H

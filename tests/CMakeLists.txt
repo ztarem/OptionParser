@@ -1,0 +1,10 @@
+add_executable(simple_test simple_test.cxx)
+target_link_libraries(simple_test OptionParser)
+
+add_test(NAME help COMMAND simple_test -h)
+add_test(NAME plain COMMAND simple_test)
+add_test(NAME verbose COMMAND simple_test -v)
+add_test(NAME arg_override COMMAND simple_test -v -f 42)
+add_test(NAME unknown_arg COMMAND simple_test -v -x)
+add_test(NAME conflicting_arg COMMAND simple_test -v -q)
+set_tests_properties(unknown_arg conflicting_arg PROPERTIES WILL_FAIL TRUE)
