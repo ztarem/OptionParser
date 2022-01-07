@@ -14,7 +14,7 @@ public:
 
     OptionParser() : super("Sample derived OptionParser")
     {
-        this->add_option("-f,--first", this->first, "First argument", true);
+        this->add_option("-f,--first", this->first, "First argument");
     }
     ~OptionParser() override = default;
 

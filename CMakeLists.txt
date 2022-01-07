@@ -9,7 +9,11 @@ set(PROJECT_VERSION 1.0)
 
 enable_testing()
 
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
+
 add_library(OptionParser SHARED optionparserbase.cxx optionparserbase.h)
+target_link_libraries(OptionParser CONAN_PKG::cli11 CONAN_PKG::spdlog)
 set_property(TARGET OptionParser PROPERTY VERSION ${PROJECT_VERSION})
 set_property(TARGET OptionParser PROPERTY SOVERSION 1)
 set_property(TARGET OptionParser PROPERTY INTERFACE_OptionParser_MAJOR_VERSION 1)
